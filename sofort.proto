@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+service DeviceService {
+    rpc GetDeviceName (GetDeviceNameReq) returns (GetDeviceNameResp);
+    rpc GetDevicePhoto(GetDevicePhotoReq) returns (GetDevicePhotoResp);
+    rpc GetStream (GetStreamReq) returns (stream GetStreamResp);
+    rpc GetStreamAddress (GetStreamAddressReq) returns (GetStreamAddressResp);
+}
+
+
+message GetDeviceNameReq {}
+
+message GetDeviceNameResp {
+    string name = 1;
+}
+
+
+message GetDevicePhotoReq {
+}
+message GetDevicePhotoResp {
+    bytes photo = 1;
+}
+
+
+
+message GetStreamReq {
+    int32 startDateTime = 1;
+}
+message GetStreamResp {
+    int32 id = 1;
+}
+
+
+message GetStreamAddressReq {
+}
+message GetStreamAddressResp {
+    string address = 1;
+}
+
+
+message Device {
+    string address = 1;
+    string macAddress = 2;
+    string password = 3;
+}

@@ -1,0 +1,19 @@
+= sofort
+:hardbreaks:
+
+Take a photo and recieve it *sofort* (directly) on your other device.
+
+
+== How it works?
+
+* A grpc server; link:sofort.proto[]:
+** Used to communicate between devices.
+** Listen for new photos and get their ids.
+
+* A photo server:
+** Returns photos for a requested _photo id_.
+
+* Database:
+** A global database will be used to store information about the devices connected. Stuff like the name of the device and the secret key will be stored there.
+
+** Device independent database: Each device 
